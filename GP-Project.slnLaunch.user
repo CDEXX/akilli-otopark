@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Yeni Profil",
+    "Projects": [
+      {
+        "Path": "GP-Project\\GP-Project.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "ParkWiseWeb\\ParkWiseWeb.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

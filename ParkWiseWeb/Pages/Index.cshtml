@@ -1,0 +1,121 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Otopark Ödeme";
+}
+
+<style>
+    body {
+        background-color: #f0f2f5;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .ticket-card {
+        background: white;
+        width: 350px;
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Üstteki renkli şerit */
+    .ticket-header {
+        background: #007bff;
+        height: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    h1 {
+        color: #333;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        font-weight: 700;
+    }
+
+    .info-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #eee;
+    }
+
+    .label {
+        color: #888;
+        font-size: 0.9rem;
+    }
+
+    .value {
+        color: #333;
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+
+    .status-badge {
+        background-color: #e3f2fd;
+        color: #0d47a1;
+        padding: 5px 15px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    .pay-btn {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        width: 100%;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .pay-btn:hover {
+        background-color: #218838;
+    }
+</style>
+
+<div class="ticket-card">
+    <div class="ticket-header"></div>
+
+    <div class="status-badge">@Model.DurumMesaji</div>
+
+    <h1>Park Detayı</h1>
+
+    <div class="info-row">
+        <span class="label">Park Yeri</span>
+        <span class="value" style="color: #007bff;">@Model.ParkYeri</span>
+    </div>
+
+    <div class="info-row">
+        <span class="label">Araç Plakası</span>
+        <span class="value">@Model.Plaka</span>
+    </div>
+
+    <div class="info-row">
+        <span class="label">Giriş Saati</span>
+        <span class="value">@Model.GirisSaati</span>
+    </div>
+
+    <div style="margin-top: 30px;">
+        <button class="pay-btn">Ödeme Yap</button>
+    </div>
+
+    <p style="margin-top: 15px; font-size: 0.8rem; color: #aaa;">ParkWise Systems © 2024</p>
+</div>
